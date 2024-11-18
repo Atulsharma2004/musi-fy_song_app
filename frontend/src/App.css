@@ -1,0 +1,81 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .circle {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #ff6b81, #d06eee, #e517f8);
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .circle.rotate {
+    transform: rotate(360deg);
+  }
+  
+  .icon {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .icon.play:before {
+    content: '►';
+    font-size: 25px;
+    color: #333;
+  }
+  
+  .icon.pause:before {
+    content: '❚❚';
+    font-size: 25px;
+    color: #333;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+
+  /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .circle{
+        height: 50px;
+        width: 50px;
+    }
+    .icon{
+        height: 25px;
+        width: 25px;
+    }
+    .icon.play:before{
+        font-size: 20px;
+    }
+    .icon.pause:before {
+        font-size: 20px;
+    }
+}
